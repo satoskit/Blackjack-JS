@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <!-- <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <script src="https://unpkg.com/vuex/dist/vuex.js"></script> -->
+    <title>Uppgift 5 Blackjack</title>
+  </head>
+
+  <body>
+    <h1>Welcome to Blackjack with JavaScript!</h1>
+    <div id="app">
+      <input v-on:click="startClicked" type="button" name="" value="Start">
+      <input v-on:click="hitClicked" :disabled="canDraw" type="button" name="" value="Hit">
+      <input v-on:click="standClicked" :disabled="toFinish" type="button" name="" value="Stand">
+      <div class="">
+        <span id="player-score">Your Score: {{ playerScore }}</span>
+        <span id="dealer-score">Dealer's Score: {{ dealerScore }}</span>
+      </div>
+      <h4>Your Hand</h4>
+      <!-- <table>
+        <th>Your Hand</th>
+        <th>Dealder's Hand</th>
+        <tr id="player-hand" v-for="card in playerHand">{{ card.value }}: {{ card.suit }}
+          <td></td>
+        </tr>
+      </table> -->
+      <!-- <div id="player-hand" v-for="card in playerHand">{{ card.value }}: {{ card.suit }}</div> -->
+      <div id="player-hand" v-for="card in playerHand">{{ prettyCard(card) }}</div>
+      <h4>Dealer's Hand</h4>
+      <div id="dealer-hand" v-for="card in dealerHand">{{ prettyCard(card) }}</div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+
+</html>
