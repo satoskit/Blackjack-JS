@@ -37,6 +37,10 @@ new Vue ({
       return this.deck
     },
     startClicked(){
+      if(this.deck.length !== 52){
+        this.deck = []
+        this.deck = this.createAndShuffleDeck()
+      }
       console.log(this.deck);
       console.log("something");
       if(this.playerHand !== null){
